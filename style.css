@@ -392,4 +392,121 @@ a { text-decoration: none; }
   border: 1px solid rgba(212,175,55,0.2);
   border-radius: 14px; padding: 1.5rem;
   transition: all 0.3s ease;
+  /* ===================== TESTIMONIALS ===================== */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.testi-card {
+  background: rgba(13,29,78,0.6);
+  border: 1px solid rgba(212,175,55,0.15);
+  border-radius: 16px; padding: 1.8rem;
+  transition: all 0.3s ease;
+}
+.testi-card:hover {
+  background: rgba(212,175,55,0.08);
+  border-color: rgba(212,175,55,0.4);
+  transform: translateY(-5px);
+}
+.testi-quote { color: #D4AF37; font-size: 2rem; margin-bottom: 0.5rem; }
+.testi-text {
+  color: #ccd6f6; font-size: 0.95rem; line-height: 1.7;
+  font-style: italic; margin-bottom: 1.2rem;
+}
+.testi-author { display: flex; align-items: center; gap: 0.8rem; }
+.testi-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, #D4AF37, #B8960C);
+  display: flex; align-items: center; justify-content: center;
+  color: #060F28; font-weight: 700; font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.testi-name { color: #D4AF37; font-weight: 700; font-size: 0.9rem; }
+.testi-role { color: #8892b0; font-size: 0.78rem; }
+ 
+/* ===================== CONTACT ===================== */
+.contact-sub {
+  text-align: center; color: #8892b0;
+  margin: 0 auto 3rem; max-width: 500px;
+}
+.contact-form { max-width: 600px; margin: 0 auto; }
+.form-input {
+  width: 100%;
+  background: rgba(13,29,78,0.5);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 10px;
+  padding: 0.85rem 1.2rem;
+  color: #ccd6f6;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  margin-bottom: 1rem;
+  display: block;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-input:focus {
+  border-color: rgba(212,175,55,0.6);
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.1);
+}
+.form-textarea { resize: vertical; }
+.form-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.sent-msg {
+  margin-top: 1rem;
+  background: rgba(74,222,128,0.1);
+  border: 1px solid rgba(74,222,128,0.3);
+  border-radius: 8px; padding: 0.8rem 1.2rem;
+  color: #4ade80; font-size: 0.9rem;
+}
+ 
+/* ===================== FOOTER ===================== */
+#footer {
+  border-top: 1px solid rgba(212,175,55,0.15);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  background: rgba(6,10,25,0.8);
+}
+.footer-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem; color: #D4AF37; margin-bottom: 1rem;
+}
+.footer-links {
+  display: flex; gap: 1.5rem; justify-content: center;
+  margin-bottom: 1.5rem; flex-wrap: wrap;
+}
+.footer-copy { color: #4a5568; font-size: 0.82rem; }
+ 
+/* ===================== FLOATING WA ===================== */
+.floating-wa {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: all 0.3s ease;
+}
+.floating-wa:hover {
+  box-shadow: 0 8px 30px rgba(37,211,102,0.6);
+  transform: scale(1.1);
+}
+ 
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .nav-links { display: none; flex-direction: column; gap: 0; }
+  .nav-links.open {
+    display: flex;
+    position: absolute; top: 70px; left: 0; right: 0;
+    background: rgba(6,15,40,0.98);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+  }
+  .nav-links.open li { padding: 0.7rem 0; }
+  .burger { display: block; }
+  .hire-btn { display: none; }
+  .about-flex { flex-direction: column; gap: 2rem; }
+  .hero-btns { flex-direction: column; align-items: center; }
+}
+ 
+
   display: flex; align-items: flex-start;
