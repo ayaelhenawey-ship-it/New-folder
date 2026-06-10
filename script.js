@@ -20,24 +20,56 @@ const projects = [
     desc: "An Interactive Learning Platform for Programming and Development Skills.",
     tag: "EdTech",
     img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80",
+    link: "",
   },
   {
     title: "TravelVista",
     desc: "Explore the World with the Best Travel Tours — dynamic web app.",
     tag: "Travel",
     img: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80",
+    link: "",
   },
   {
     title: "Cafe Royale",
     desc: "Modern Café Website with elegant design & user experience.",
     tag: "Food & Beverage",
     img: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&q=80",
+    link: "",
   },
   {
     title: "Glow Derma Clinic",
     desc: "Professional clinic website with interactive animations.",
     tag: "Healthcare",
     img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80",
+    link: "",
+  },
+  {
+    title: "Saveur",
+    desc: "Fine dining mobile app with splash screen, sign-in flow, menu categories & contact — built with React Native.",
+    tag: "Mobile App",
+    img: "saveur.png",
+    link: "https://github.com/ayaelhenawey-ship-it/saveur",
+  },
+  {
+    title: "AI Chat",
+    desc: "Intelligent conversational AI chat application with real-time messaging interface.",
+    tag: "AI",
+    img: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80",
+    link: "https://github.com/ayaelhenawey-ship-it/ai-chat",
+  },
+  {
+    title: "Pharmacy System",
+    desc: "Full-featured pharmacy management system with inventory, orders & user management.",
+    tag: "Healthcare",
+    img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80",
+    link: "https://github.com/ayaelhenawey-ship-it/pharmacy",
+  },
+  {
+    title: "Mobile App",
+    desc: "Cross-platform mobile application built with React Native featuring a modern UI.",
+    tag: "Mobile App",
+    img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80",
+    link: "https://github.com/YassaAndria/Mobile",
   },
 ];
 
@@ -48,11 +80,7 @@ const education = [
   { title: "UI/UX Design Certificate",      year: "2024", icon: "🎨" },
 ];
 
-const testimonials = [
-  { text: "Aya delivered an amazing website — highly recommended!", name: "Client 1", role: "Business Owner" },
-  { text: "Professional, fast, and very talented developer.",         name: "Client 2", role: "Startup Founder" },
-  { text: "Creative solutions and excellent communication throughout.", name: "Client 3", role: "Project Manager" },
-];
+
 
 // ===================== RENDER SKILLS =====================
 const skillsGrid = document.getElementById("skills-grid");
@@ -78,6 +106,7 @@ projects.forEach(p => {
       <div class="project-body">
         <h3 class="project-title">${p.title}</h3>
         <p class="project-desc">${p.desc}</p>
+        ${p.link ? `<a href="${p.link}" target="_blank" class="project-link">View on GitHub →</a>` : ""}
       </div>
     </div>`;
 });
@@ -95,22 +124,7 @@ education.forEach(e => {
     </div>`;
 });
 
-// ===================== RENDER TESTIMONIALS =====================
-const testiGrid = document.getElementById("testi-grid");
-testimonials.forEach(t => {
-  testiGrid.innerHTML += `
-    <div class="testi-card">
-      <div class="testi-quote">"</div>
-      <p class="testi-text">${t.text}</p>
-      <div class="testi-author">
-        <div class="testi-avatar">${t.name[0]}</div>
-        <div>
-          <div class="testi-name">${t.name}</div>
-          <div class="testi-role">${t.role}</div>
-        </div>
-      </div>
-    </div>`;
-});
+
 
 // ===================== NAVBAR SCROLL =====================
 const navbar = document.getElementById("navbar");
@@ -132,7 +146,7 @@ navLinks.querySelectorAll("a").forEach(a => {
 
 // ===================== ACTIVE NAV HIGHLIGHT =====================
 function highlightNav() {
-  const sections = ["about","skills","projects","education","testimonials","contact"];
+  const sections = ["about","skills","projects","education","contact"];
   let current = "";
   sections.forEach(id => {
     const el = document.getElementById(id);
